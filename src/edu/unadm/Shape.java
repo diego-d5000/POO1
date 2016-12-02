@@ -25,8 +25,8 @@ public class Shape {
 
     // Si Shape fuese una clase abstracta ese seria su metodo abstracto
     // ya que no se puede dibujar una figura (sin especificar que tipo es)
-    public void draw() {
-        System.out.println("Sin figura");
+    public void draw() throws NoShapeException {
+        throw new NoShapeException();
 
     }
 
@@ -46,4 +46,6 @@ public class Shape {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public class NoShapeException extends Exception {}
 }
