@@ -3,6 +3,9 @@ package edu.unadm;
 /**
  * Created by diego-d on 1/12/16.
  */
+
+// La clase ahora implementa forzasamente y
+// respectivamente los metodos que requiere la clase abstracta de la que hereda
 public class Square extends Shape{
     public Square(String color, double positionX, double positionY) {
         super(color, positionX, positionY);

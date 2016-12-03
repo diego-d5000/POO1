@@ -5,8 +5,10 @@ package edu.unadm;
  */
 
 // Esta es la superclase de la que heredan las demas calses de figuras
-// La clase debio haber sido abstracta pero es tema para la Evidencia de aprendizaje
-public class Shape {
+// La clase ahora es abstracta ya que draw y erase son metodos abstractos
+// que debe forzosamente ser implementado por cada figura
+// Shape no puede ser instanciado por tal razon
+public abstract class Shape implements Drawable {
     String color;
     double positionX;
     double positionY;
@@ -25,14 +27,9 @@ public class Shape {
 
     // Si Shape fuese una clase abstracta ese seria su metodo abstracto
     // ya que no se puede dibujar una figura (sin especificar que tipo es)
-    public void draw() throws NoShapeException {
-        throw new NoShapeException();
+    public abstract void draw();
 
-    }
-
-    public void erase() {
-        for (int i = 0; i < 50; ++i) System.out.println();
-    }
+    public abstract void erase();
 
     public void move(double positionX, double positionY) {
         this.positionX = positionX;
@@ -46,6 +43,4 @@ public class Shape {
     public void setColor(String color) {
         this.color = color;
     }
-
-    public class NoShapeException extends Exception {}
 }

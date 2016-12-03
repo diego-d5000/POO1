@@ -14,7 +14,7 @@ public class Main {
 
         shapes.add(new Square("Rojo", 0, 0));
         shapes.add(new Circle("Verde", 0, 0));
-        shapes.add(new Shape("Morado", 0, 0));
+        // shapes.add(new Shape("Morado", 0, 0)); ya no puede ser instanciada
         shapes.add(new Triangle("Azul", 0, 0));
 
         // Se recorre la lista de figuras
@@ -22,11 +22,7 @@ public class Main {
             // Es una de las ventajas del poliformismo, puedo ejecutar metodos de Shape
             // pero enrealidad se ejecutan los metodos de la figura en turno
             // esto es por que las figuras heredan de Shape y pueden ser tratadas como su clase padre
-            try {
-                shape.draw();
-            } catch (Shape.NoShapeException e) {
-                System.out.println("Sin figura");
-            }
+            shape.draw();
 
             // Con la sentencia try intentamos obtener una entrada de texto
             // pero se atrapan 2 excepciones que puede haber al usar Scanner
